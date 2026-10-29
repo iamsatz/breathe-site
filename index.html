@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Breathe · Your Mac's memory, one friendly face</title>
+<meta name="description" content="A tiny menu bar app for macOS. A face shows how stressed your Mac's memory is, and Breathe tells you which app to pause, with one safe click.">
+<meta property="og:title" content="Breathe for Mac">
+<meta property="og:description" content="Know which app is slowing your Mac. Pause it in one click.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=14">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="face-safe" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="#23864C"/><circle cx="6.3" cy="7.4" r="1" fill="#fff"/><circle cx="11.7" cy="7.4" r="1" fill="#fff"/><path d="M5.6 10.6q3.4 3.2 6.8 0" stroke="#fff" stroke-width="1.4" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="face-building" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="#F3CD55"/><circle cx="6.3" cy="7.4" r="1" fill="#143D2C"/><circle cx="11.7" cy="7.4" r="1" fill="#143D2C"/><path d="M6 11.6h6" stroke="#143D2C" stroke-width="1.4" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="face-critical" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="#EF8C38"/><circle cx="6.3" cy="7.4" r="1" fill="#143D2C"/><circle cx="11.7" cy="7.4" r="1" fill="#143D2C"/><path d="M5.8 12.2q3.2-2.8 6.4 0" stroke="#143D2C" stroke-width="1.4" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="face-frozen" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="#D10811"/><path d="M5.2 6.2l2.2 2.2M7.4 6.2L5.2 8.4M10.6 6.2l2.2 2.2M12.8 6.2l-2.2 2.2" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/><path d="M6.2 12.4q2.8-2 5.6 0" stroke="#fff" stroke-width="1.4" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="expr" viewBox="0 0 18 18"><circle cx="6.3" cy="7.4" r="1.2" fill="currentColor"/><circle cx="11.7" cy="7.4" r="1.2" fill="currentColor"/><path d="M5.6 10.6q3.4 3.2 6.8 0" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></symbol>
+</defs></svg>
+
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#"><svg class="face"><use href="#face-safe"/></svg> Breathe</a>
+    <ul><li><a href="#why">Why</a></li><li><a href="#tour">What you see</a></li><li><a href="#states">Four faces</a></li><li><a href="#compare">Compare</a></li><li><a href="#faq">FAQ</a></li></ul>
+    <div class="navr"><a class="btn" href="#download">Download for Mac</a></div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <h1 aria-label="Room to breathe, for your Mac">R<span class="pill" aria-hidden="true"><svg><use href="#expr"/></svg></span>M<br>to breathe<br><svg class="arrow" viewBox="0 0 60 24" fill="none" aria-hidden="true"><path d="M2 12h52M44 3l10 9-10 9" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="y sub">for your Mac</span></h1>
+      <p class="lead">A tiny menu bar face shows how stressed your Mac's memory is. Open it and Breathe tells you which app to pause, with one safe click.</p>
+      <div class="cta"><a class="btn" href="#download">Download for Mac <svg viewBox="0 0 18 18" fill="none"><path d="M4 14L14 4M6 4h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="ghost" href="#tour">See how it works</a></div>
+      <p class="fine">Free · macOS 13 or later · 1.7 MB · Nothing leaves your Mac</p>
+    </div>
+    <div class="stage" role="img" aria-label="The Breathe panel in the Critical state in front, the Safe state behind">
+      <div class="menubar"><span class="dim">Tue 9:41</span><svg class="face"><use href="#face-critical"/></svg><span class="dim">● ◉ █</span></div>
+      <div class="panel front">
+        <div class="phero critical"><div><strong class="h4">Memory pressure is critical</strong><p>Close unused apps to ease the load.</p></div><div class="free"><b>0.6 GB</b> free of 16 GB</div><img src="assets/character-critical@2x.png" alt=""></div>
+        <div class="prow"><span>Details</span><span class="chev">︿</span></div>
+        <div class="card"><span class="stripe"></span><img src="assets/icon-comet.png" alt=""><div class="grow"><div class="name">Comet <span class="badge">Growing fast</span></div><div class="sub">4.7 GB · 29% of your Mac</div></div><div class="pause"><span>Pause</span><span>▾</span></div></div>
+        <div class="card"><span class="stripe"></span><img src="assets/icon-figma.png" alt=""><div class="grow"><div class="name">Figma</div><div class="sub">4.3 GB · 27% of your Mac</div></div><div class="pause"><span>Pause</span><span>▾</span></div></div>
+        <div class="card"><span class="stripe"></span><img src="assets/icon-cursor.png" alt=""><div class="grow"><div class="name">Cursor</div><div class="sub">2.9 GB · 18% of your Mac</div></div><div class="pause"><span>Pause</span><span>▾</span></div></div>
+        <div class="showmore">Show 5 more ⌄</div>
+        <div class="pfoot"><span>Updated just now</span><span class="ic">↻ ⚙ ⏻</span></div>
+      </div>
+      <div class="panel back">
+        <div class="phero safe"><div><strong class="h4">Your Mac is running smoothly</strong><p>Memory pressure is low.</p></div><div class="free"><b>8.9 GB</b> free of 16 GB</div><img src="assets/character-safe@2x.png" alt=""></div>
+        <div class="prow"><span>Details · 6 apps</span><span class="chev">﹀</span></div>
+        <div class="pfoot"><span>Updated just now</span><span class="ic">↻ ⚙ ⏻</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="problem">
+      <div>
+        <p class="eyebrow">The problem</p>
+        <h2>Your Mac has 16 GB.<br>Your apps want 30.</h2>
+        <p class="lead">Figma, Chrome, Slack, and the AI apps that are secretly browsers. Activity Monitor shows you numbers. Nothing tells you which one to close.</p>
+      </div>
+      <div class="apps">
+        <span><i class="sq">C</i>Chrome <i class="gb">8.4 GB</i></span>
+        <span><img src="assets/icon-comet.png" alt="">Comet <i class="gb">4.7 GB</i></span>
+        <span><img src="assets/icon-figma.png" alt="">Figma <i class="gb">4.3 GB</i></span>
+        <span><i class="sq">D</i>Docker <i class="gb">4.0 GB</i></span>
+        <span><img src="assets/icon-cursor.png" alt="">Cursor <i class="gb">2.9 GB</i></span>
+        <span><i class="sq">OS</i>macOS <i class="gb">2.5 GB</i></span>
+        <span><img src="assets/icon-claude.png" alt="">Claude <i class="gb">1.8 GB</i></span>
+        <span><img src="assets/icon-slack.png" alt="">Slack <i class="gb">1.4 GB</i></span>
+        <span class="sum">= 30 GB on a 16 GB Mac · it freezes</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="tour">
+    <div class="tour">
+      <div class="stage">
+        <div class="panel" role="img" aria-label="The Breathe panel in the Critical state, suggesting to pause Comet">
+          <div class="phero critical">
+            <div><strong class="h4">Memory pressure is critical</strong><p>Close unused apps to ease the load.</p></div>
+            <div class="free"><b>0.6 GB</b> free of 16 GB</div>
+            <img src="assets/character-critical@2x.png" alt="">
+          </div>
+          <div class="suggest"><div class="stitle">Suggested</div><p>Pausing Comet frees up to 4.7 GB.</p><div class="sbtns"><span class="pbtn">Pause Comet 30 min</span><span class="notnow">Not now</span></div></div>
+          <div class="prow"><span>Details · 8 heavy apps</span><span class="chev">﹀</span></div>
+          <div class="pfoot"><span>Updated just now</span><span class="ic">↻ ⚙ ⏻</span></div>
+        </div>
+        <div class="callout" style="top:60px">The face changes colour</div>
+        <div class="callout" style="top:250px">One suggestion, one click</div>
+        <div class="callout" style="top:330px">Polite quit, back after the time you pick</div>
+        <ul class="callout-list"><li>The face changes colour</li><li>One suggestion, one click</li><li>Polite quit, back after the time you pick</li></ul>
+      </div>
+      <div>
+        <p class="eyebrow">What you see</p>
+        <h2>One sentence,<br>one button.</h2>
+        <p class="lead">Breathe tells you what is heavy, what to do, and what you got back: "You freed 4.7 GB." Pause closes the app politely and reopens it after the time you picked, so nothing is lost.</p>
+        <div class="cta"><a class="btn ink" href="#download">Try it on your Mac</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="states">
+    <div class="sec-h"><h2>Four faces,<br>no numbers to read</h2><p>The face in your menu bar changes with memory pressure. Most days you only ever see the green one.</p></div>
+    <div class="grid4">
+      <div class="state s-safe"><svg class="face"><use href="#face-safe"/></svg><h3>Safe</h3><p>Plenty of room. Breathe stays out of the way.</p><img src="assets/character-safe@2x.png" alt=""></div>
+      <div class="state s-building"><svg class="face"><use href="#face-building"/></svg><h3>Building</h3><p>Memory is getting tight. A good moment to pause something.</p><img src="assets/character-building@2x.png" alt=""></div>
+      <div class="state s-critical"><svg class="face"><use href="#face-critical"/></svg><h3>Critical</h3><p>Your Mac is about to slow down. Breathe suggests one app.</p><img src="assets/character-critical@2x.png" alt=""></div>
+      <div class="state s-frozen"><svg class="face"><use href="#face-frozen"/></svg><h3>Barely responding</h3><p>One heavy app pinned, with Quit.</p><img src="assets/character-frozen@2x.png" alt=""></div>
+    </div>
+  </section>
+
+  <section id="who">
+    <div class="sec-h"><h2>For people who run<br>everything at once</h2><p>Breathe watches memory, not you. It stays green and silent most days.</p></div>
+    <div class="grid3">
+      <div class="tile card2"><img src="assets/icon-figma.png" alt=""><h3>Designers</h3><p>Figma, Chrome and three AI apps on a 16 GB MacBook. Breathe tells you which tab-heavy browser to pause before a demo.</p></div>
+      <div class="tile card2"><img src="assets/icon-cursor.png" alt=""><h3>Builders</h3><p>Cursor, Docker and a dev server. Pause Slack for 30 minutes, get the memory back, and Slack comes back after the time you picked.</p></div>
+      <div class="tile card2"><img src="assets/icon-claude.png" alt=""><h3>Anyone on 8 GB</h3><p>Breathe is lighter than a browser tab: 1.7 MB on disk, under 30 MB of memory, no background services.</p></div>
+    </div>
+  </section>
+
+  <section id="compare">
+    <div class="sec-h"><h2>Not a cleaner.<br>Not a dashboard.</h2><p>Other tools show you what is heavy. Breathe tells you what to do.</p></div>
+    <div class="tablewrap">
+    <table>
+      <tr><th></th><th>Activity Monitor</th><th>"RAM cleaner" apps</th><th>Breathe</th></tr>
+      <tr><td>Tells you which app to close</td><td class="no">Numbers only</td><td class="no">No</td><td class="ok">Yes, one sentence</td></tr>
+      <tr><td>Groups helper processes into apps</td><td class="no">No</td><td class="no">No</td><td class="ok">Yes</td></tr>
+      <tr><td>Reopens the app later</td><td class="no">No</td><td class="no">No</td><td class="ok">Pause, 10 to 60 min</td></tr>
+      <tr><td>Force-kills or "purges" memory</td><td class="no">Can</td><td class="no">Often</td><td class="ok">Never</td></tr>
+      <tr><td>Needs an account or the network</td><td class="ok">No</td><td class="no">Some do</td><td class="ok">No</td></tr>
+    </table>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="sec-h"><h2>Questions</h2><p>Short answers. The app is small, so the FAQ is too.</p></div>
+    <div class="faq">
+      <div><b>Does it close apps on its own?</b><p>Never. Every Pause or Quit is one click by you. Breathe only watches.</p></div>
+      <div><b>What does Pause do?</b><p>It asks the app to quit politely, like ⌘Q, and reopens it after 10, 30 or 60 minutes. You pick.</p></div>
+      <div><b>Is it a "RAM cleaner"?</b><p>No. macOS already manages memory well. What helps is pausing the one app that is heavy, and Breathe tells you which.</p></div>
+      <div><b>Does it send anything anywhere?</b><p>No account, no network, no analytics. Readings live in memory and are gone when you quit.</p></div>
+      <div><b>What about macOS processes?</b><p>Listed with their memory so you understand them, with no button. Breathe won't touch them.</p></div>
+      <div><b>What does it cost?</b><p>Nothing. Signed and notarized by Apple, outside the App Store.</p></div>
+    </div>
+  </section>
+
+  <section id="download">
+    <div class="download">
+      <div><h2>Give your Mac some room</h2><p>Open the DMG, drag Breathe to Applications, click the face in your menu bar.</p></div>
+      <div class="right"><a class="btn ink" href="https://github.com/iamsatz/breathe-site/releases/latest/download/Breathe.dmg">Download Breathe 2.0 <svg viewBox="0 0 18 18" fill="none"><path d="M9 3v9M5 8l4 4 4-4M3 15h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="req">macOS 13 or later · Apple silicon · 1.7 MB</span></div>
+    </div>
+  </section>
+
+  <footer><span>© 2026 Breathe · Made by Sateesh</span><ul><li><a href="https://github.com/iamsatz/breathe-site/releases">Changelog</a></li><li><a href="#faq">Privacy</a></li><li><a href="mailto:satishkumar.2163@gmail.com">Contact</a></li></ul></footer>
+</div>
+</body>
+</html>
