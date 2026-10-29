@@ -8,7 +8,7 @@
 <meta property="og:title" content="Breathe for Mac">
 <meta property="og:description" content="Know which app is slowing your Mac. Pause it in one click.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css?v=15">
+<link rel="stylesheet" href="style.css?v=17">
 </head>
 <body>
 
@@ -29,10 +29,11 @@
 
   <section class="hero">
     <div>
-      <h1 aria-label="Room to breathe">R<span class="pill" aria-hidden="true"><svg><use href="#expr"/></svg></span>M<br>to breathe<br><svg class="arrow" viewBox="0 0 60 24" fill="none" aria-hidden="true"><path d="M2 12h52M44 3l10 9-10 9" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="y sub" data-os-sub>for your Mac</span></h1>
-      <p class="lead" data-os-lead>A tiny menu bar face shows how stressed your Mac's memory is. Open it and Breathe tells you which app to pause, with one safe click.</p>
+      <h1 aria-label="Room to breathe, for your Mac">R<span class="pill" aria-hidden="true"><svg><use href="#expr"/></svg></span>M<br>to breathe<br><svg class="arrow" viewBox="0 0 60 24" fill="none" aria-hidden="true"><path d="M2 12h52M44 3l10 9-10 9" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="y sub">for your Mac</span></h1>
+      <p class="lead">A tiny menu bar face shows how stressed your Mac's memory is. Open it and Breathe tells you which app to pause, with one safe click.</p>
       <div class="cta"><a class="btn" href="#download"><span data-os-text>Download for Mac</span> <svg viewBox="0 0 18 18" fill="none"><path d="M4 14L14 4M6 4h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="ghost" href="#tour">See how it works</a></div>
-      <p class="fine" data-os-fine>Free · macOS 13 or later · 1.7 MB · Nothing leaves your Mac</p>
+      <p class="fine" data-os-fine>Free · macOS 13 or later · 1.1 MB download · Nothing leaves your Mac</p>
+      <p class="fine alt"><a class="other" data-os-other href="https://github.com/iamsatz/breathe-site/releases/latest/download/Breathe-Windows.zip">Also for Windows (early build)</a></p>
     </div>
     <div class="stage" role="img" aria-label="The Breathe panel in the Critical state in front, the Safe state behind">
       <div class="menubar"><span class="dim">Tue 9:41</span><svg class="face"><use href="#face-critical"/></svg><span class="dim">● ◉ █</span></div>
@@ -69,7 +70,7 @@
         <span><i class="sq">OS</i>macOS <i class="gb">2.5 GB</i></span>
         <span><img src="assets/icon-claude.png" alt="">Claude <i class="gb">1.8 GB</i></span>
         <span><img src="assets/icon-slack.png" alt="">Slack <i class="gb">1.4 GB</i></span>
-        <span class="sum">= 30 GB on a 16 GB Mac · it freezes</span>
+        <span class="sum">= 30 GB on a 16 GB Mac · it can freeze</span>
       </div>
     </div>
   </section>
@@ -96,7 +97,7 @@
         <p class="eyebrow">What you see</p>
         <h2>One sentence,<br>one button.</h2>
         <p class="lead">Breathe tells you what is heavy, what to do, and what you got back: "You freed 4.7 GB." Pause closes the app politely and reopens it after the time you picked, so nothing is lost.</p>
-        <div class="cta"><a class="btn ink" href="#download">Try it on your Mac</a></div>
+        <div class="cta"><a class="btn ink" href="#download">Download Breathe</a></div>
       </div>
     </div>
   </section>
@@ -116,7 +117,7 @@
     <div class="grid3">
       <div class="tile card2"><img src="assets/icon-figma.png" alt=""><h3>Designers</h3><p>Figma, Chrome and three AI apps on a 16 GB MacBook. Breathe tells you which tab-heavy browser to pause before a demo.</p></div>
       <div class="tile card2"><img src="assets/icon-cursor.png" alt=""><h3>Builders</h3><p>Cursor, Docker and a dev server. Pause Slack for 30 minutes, get the memory back, and Slack comes back after the time you picked.</p></div>
-      <div class="tile card2"><img src="assets/icon-claude.png" alt=""><h3>Anyone on 8 GB</h3><p>Breathe is lighter than a browser tab: 1.7 MB on disk, under 30 MB of memory, no background services.</p></div>
+      <div class="tile card2"><img src="assets/icon-claude.png" alt=""><h3>Anyone on 8 GB</h3><p>Breathe is small: 1.8 MB on disk, under 30 MB of memory, no background services.</p></div>
     </div>
   </section>
 
@@ -142,14 +143,16 @@
       <div><b>Is it a "RAM cleaner"?</b><p>No. macOS already manages memory well. What helps is pausing the one app that is heavy, and Breathe tells you which.</p></div>
       <div><b>Does it send anything anywhere?</b><p>No account, no network, no analytics. Readings live in memory and are gone when you quit.</p></div>
       <div><b>What about macOS processes?</b><p>Listed with their memory so you understand them, with no button. Breathe won't touch them.</p></div>
-      <div><b>What does it cost?</b><p>Nothing. Signed and notarized by Apple, outside the App Store.</p></div>
+      <div><b>What does it cost?</b><p>Nothing. The Mac version is signed and notarized by Apple, outside the App Store.</p></div>
+      <div><b>Is there a Windows version?</b><p>Yes, an early build. It is built to show the same face in the tray, list the heaviest apps and close one politely. No Pause. Nobody has run it on a real PC yet, so treat it as a test. It needs Microsoft's free .NET 8 Desktop Runtime, and Windows shows a blue warning because it is not signed.</p></div>
+      <div><b>Does it run on Intel Macs?</b><p>Not yet. The current download is built for Apple silicon.</p></div>
     </div>
   </section>
 
   <section id="download">
     <div class="download">
-      <div><h2 data-os-h2>Give your Mac some room</h2><p data-os-howto>Open the DMG, drag Breathe to Applications, click the face in your menu bar.</p></div>
-      <div class="right"><a class="btn ink" data-os-main href="https://github.com/iamsatz/breathe-site/releases/latest/download/Breathe.dmg">Download for Mac <svg viewBox="0 0 18 18" fill="none"><path d="M9 3v9M5 8l4 4 4-4M3 15h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="req" data-os-req>macOS 13 or later · Apple silicon · 1.7 MB</span><a class="other" data-os-other href="https://github.com/iamsatz/breathe-site/releases/latest/download/Breathe-Windows.zip">Also for Windows (early build)</a></div>
+      <div><h2>Give your Mac some room</h2><p data-os-howto>Open the DMG, drag Breathe to Applications, click the face in your menu bar.</p></div>
+      <div class="right"><a class="btn ink" data-os-main href="https://github.com/iamsatz/breathe-site/releases/latest/download/Breathe.dmg"><span data-os-text>Download for Mac</span> <svg viewBox="0 0 18 18" fill="none"><path d="M9 3v9M5 8l4 4 4-4M3 15h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="req" data-os-req>macOS 13 or later · Apple silicon · 1.1 MB download</span><a class="other" data-os-other href="https://github.com/iamsatz/breathe-site/releases/latest/download/Breathe-Windows.zip">Also for Windows (early build)</a></div>
     </div>
   </section>
 
@@ -157,32 +160,32 @@
 </div>
 <script>
   // Picks the download for the visitor's system. ?os=mac or ?os=windows forces one, for testing.
+  // The page itself always describes the Mac app. Windows mode only changes the download button,
+  // its caveats and the other-OS link, because the Windows build is an early, untested build with Quit only.
   (function(){
     var q=new URLSearchParams(location.search).get('os');
     var p=(navigator.userAgentData&&navigator.userAgentData.platform)||navigator.platform||'';
     var win=q?q==='windows':/win/i.test(p);
-    var mac={label:'Download for Mac',href:'https://github.com/iamsatz/breathe-site/releases/latest/download/Breathe.dmg',
-      fine:'Free · macOS 13 or later · 1.7 MB · Nothing leaves your Mac',
-      req:'macOS 13 or later · Apple silicon · 1.7 MB',
+    var dmg='https://github.com/iamsatz/breathe-site/releases/latest/download/Breathe.dmg';
+    var zip='https://github.com/iamsatz/breathe-site/releases/latest/download/Breathe-Windows.zip';
+    var mac={label:'Download for Mac',href:dmg,
+      fine:'Free · macOS 13 or later · 1.1 MB download · Nothing leaves your Mac',
+      req:'macOS 13 or later · Apple silicon · 1.1 MB download',
       howto:'Open the DMG, drag Breathe to Applications, click the face in your menu bar.',
-      sub:'for your Mac',lead:"A tiny menu bar face shows how stressed your Mac's memory is. Open it and Breathe tells you which app to pause, with one safe click.",h2:'Give your Mac some room',
-      other:'Also for Windows (early build)',otherHref:'https://github.com/iamsatz/breathe-site/releases/latest/download/Breathe-Windows.zip'};
-    var w={label:'Download for Windows',href:mac.otherHref,
-      fine:'Free · Windows 10 or 11 · early build · Nothing leaves your PC',
-      req:'Windows 10 or 11 · needs the free .NET 8 runtime (Windows offers it) · unsigned: click More info, then Run anyway',
-      howto:'Unzip, run Breathe.exe, find the face in your tray. The Windows version is new: it shows the four faces and the heavy apps, with Quit only (no Pause, no browser tabs yet).',
-      sub:'for your PC',lead:"A tiny tray face shows how stressed your PC's memory is. Open it and Breathe tells you which app is heavy, and quits it politely with one click.",h2:'Give your PC some room',
-      other:'Also for Mac',otherHref:mac.href};
-    var o=win?w:mac;
-    document.querySelectorAll('[data-os-sub]').forEach(function(e){e.textContent=o.sub});
-    document.querySelectorAll('[data-os-lead]').forEach(function(e){e.textContent=o.lead});
-    document.querySelectorAll('[data-os-h2]').forEach(function(e){e.textContent=o.h2});
-    document.querySelectorAll('[data-os-text]').forEach(function(e){e.textContent=o.label});
-    document.querySelectorAll('[data-os-fine]').forEach(function(e){e.textContent=o.fine});
-    document.querySelectorAll('[data-os-req]').forEach(function(e){e.textContent=o.req});
-    document.querySelectorAll('[data-os-howto]').forEach(function(e){e.textContent=o.howto});
-    document.querySelectorAll('[data-os-main]').forEach(function(e){e.href=o.href;e.firstChild.textContent=o.label+' '});
-    document.querySelectorAll('[data-os-other]').forEach(function(e){e.textContent=o.other;e.href=o.otherHref});
+      other:'Also for Windows (early build)',otherHref:zip};
+    var w={label:'Download for Windows',href:zip,
+      fine:'Free · early build for Windows 11 · not yet tested on a real PC · unsigned, needs .NET 8 · Quit only, no Pause (this page shows the Mac app)',
+      req:'Built for Windows 11 · needs the free .NET 8 runtime (Windows offers it) · unsigned: click More info, then Run anyway · not yet tested on a real PC',
+      howto:'Unzip, run Breathe.exe, find the face in your tray (it may hide under the ^ arrow). The Windows version is new and nobody has run it on a real PC yet: it is built to show the four faces and the heavy apps, with Quit only (no Pause, no browser tabs yet). The pictures on this page show the Mac app.',
+      other:'Also for Mac',otherHref:dmg};
+    var o=win?Object.assign({},mac,w):mac;
+    function set(sel,fn){document.querySelectorAll(sel).forEach(fn)}
+    set('[data-os-text]',function(e){e.textContent=o.label});
+    set('[data-os-fine]',function(e){e.textContent=o.fine});
+    set('[data-os-req]',function(e){e.textContent=o.req});
+    set('[data-os-howto]',function(e){e.textContent=o.howto});
+    set('[data-os-main]',function(e){e.href=o.href});
+    set('[data-os-other]',function(e){e.textContent=o.other;e.href=o.otherHref});
   })();
 </script>
 </body>

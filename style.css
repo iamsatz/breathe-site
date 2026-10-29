@@ -42,6 +42,7 @@ h3{font-size:22px}
 .eyebrow{color:var(--muted);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px;margin-bottom:14px}
 .muted{color:var(--muted)}
 .fine{color:var(--muted);font-size:13px;margin-top:18px}
+.fine.alt{margin-top:8px}
 nav{display:flex;align-items:center;justify-content:space-between;padding:28px 0}
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;font-family:var(--head)}
 .logo .face{width:30px;height:30px}
@@ -119,7 +120,8 @@ td.no{color:var(--muted)}
 .download .right{display:flex;flex-direction:column;align-items:flex-start;gap:14px;justify-self:end}
 .download .btn.ink{background:#143D2C;color:#fff}
 .download .req{font-size:13px;opacity:.75;max-width:360px}
-.download .other{font-size:14px;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.hero .other{color:var(--fg)}
+.hero .other,.download .other{font-size:14px;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 footer{padding:36px 0 44px;display:flex;justify-content:space-between;color:var(--muted);font-size:14px;border-top:1px solid var(--line);flex-wrap:wrap;gap:12px}
 footer ul{display:flex;gap:28px;list-style:none}
 
@@ -255,4 +257,14 @@ footer ul{display:flex;gap:28px;list-style:none}
   .navr .btn{padding:10px 14px;font-size:14px}
   .hero .cta .btn{width:100%;justify-content:center}
   .panel{width:100%}
+}
+@media (max-width:360px){
+  .navr .btn{padding:9px 12px;font-size:13px}
+  .logo{font-size:16px}
+}
+@media (max-width:340px){
+  .navr .btn{padding:8px 10px;font-size:12px}
+  .logo{font-size:15px;gap:8px}
+  .logo .face{width:24px;height:24px}
+  .download .btn{padding:14px 14px;font-size:15px}
 }
