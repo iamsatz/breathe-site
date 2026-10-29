@@ -8,7 +8,7 @@
 <meta property="og:title" content="Breathe for Mac">
 <meta property="og:description" content="Know which app is slowing your Mac. Pause it in one click.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css?v=14">
+<link rel="stylesheet" href="style.css?v=15">
 </head>
 <body>
 
@@ -24,15 +24,15 @@
   <nav>
     <a class="logo" href="#"><svg class="face"><use href="#face-safe"/></svg> Breathe</a>
     <ul><li><a href="#why">Why</a></li><li><a href="#tour">What you see</a></li><li><a href="#states">Four faces</a></li><li><a href="#compare">Compare</a></li><li><a href="#faq">FAQ</a></li></ul>
-    <div class="navr"><a class="btn" href="#download">Download for Mac</a></div>
+    <div class="navr"><a class="btn" href="#download"><span data-os-text>Download for Mac</span></a></div>
   </nav>
 
   <section class="hero">
     <div>
-      <h1 aria-label="Room to breathe, for your Mac">R<span class="pill" aria-hidden="true"><svg><use href="#expr"/></svg></span>M<br>to breathe<br><svg class="arrow" viewBox="0 0 60 24" fill="none" aria-hidden="true"><path d="M2 12h52M44 3l10 9-10 9" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="y sub">for your Mac</span></h1>
-      <p class="lead">A tiny menu bar face shows how stressed your Mac's memory is. Open it and Breathe tells you which app to pause, with one safe click.</p>
-      <div class="cta"><a class="btn" href="#download">Download for Mac <svg viewBox="0 0 18 18" fill="none"><path d="M4 14L14 4M6 4h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="ghost" href="#tour">See how it works</a></div>
-      <p class="fine">Free · macOS 13 or later · 1.7 MB · Nothing leaves your Mac</p>
+      <h1 aria-label="Room to breathe">R<span class="pill" aria-hidden="true"><svg><use href="#expr"/></svg></span>M<br>to breathe<br><svg class="arrow" viewBox="0 0 60 24" fill="none" aria-hidden="true"><path d="M2 12h52M44 3l10 9-10 9" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="y sub" data-os-sub>for your Mac</span></h1>
+      <p class="lead" data-os-lead>A tiny menu bar face shows how stressed your Mac's memory is. Open it and Breathe tells you which app to pause, with one safe click.</p>
+      <div class="cta"><a class="btn" href="#download"><span data-os-text>Download for Mac</span> <svg viewBox="0 0 18 18" fill="none"><path d="M4 14L14 4M6 4h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="ghost" href="#tour">See how it works</a></div>
+      <p class="fine" data-os-fine>Free · macOS 13 or later · 1.7 MB · Nothing leaves your Mac</p>
     </div>
     <div class="stage" role="img" aria-label="The Breathe panel in the Critical state in front, the Safe state behind">
       <div class="menubar"><span class="dim">Tue 9:41</span><svg class="face"><use href="#face-critical"/></svg><span class="dim">● ◉ █</span></div>
@@ -148,12 +148,42 @@
 
   <section id="download">
     <div class="download">
-      <div><h2>Give your Mac some room</h2><p>Open the DMG, drag Breathe to Applications, click the face in your menu bar.</p></div>
-      <div class="right"><a class="btn ink" href="https://github.com/iamsatz/breathe-site/releases/latest/download/Breathe.dmg">Download Breathe 2.0 <svg viewBox="0 0 18 18" fill="none"><path d="M9 3v9M5 8l4 4 4-4M3 15h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="req">macOS 13 or later · Apple silicon · 1.7 MB</span></div>
+      <div><h2 data-os-h2>Give your Mac some room</h2><p data-os-howto>Open the DMG, drag Breathe to Applications, click the face in your menu bar.</p></div>
+      <div class="right"><a class="btn ink" data-os-main href="https://github.com/iamsatz/breathe-site/releases/latest/download/Breathe.dmg">Download for Mac <svg viewBox="0 0 18 18" fill="none"><path d="M9 3v9M5 8l4 4 4-4M3 15h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="req" data-os-req>macOS 13 or later · Apple silicon · 1.7 MB</span><a class="other" data-os-other href="https://github.com/iamsatz/breathe-site/releases/latest/download/Breathe-Windows.zip">Also for Windows (early build)</a></div>
     </div>
   </section>
 
   <footer><span>© 2026 Breathe · Made by Sateesh</span><ul><li><a href="https://github.com/iamsatz/breathe-site/releases">Changelog</a></li><li><a href="#faq">Privacy</a></li><li><a href="mailto:satishkumar.2163@gmail.com">Contact</a></li></ul></footer>
 </div>
+<script>
+  // Picks the download for the visitor's system. ?os=mac or ?os=windows forces one, for testing.
+  (function(){
+    var q=new URLSearchParams(location.search).get('os');
+    var p=(navigator.userAgentData&&navigator.userAgentData.platform)||navigator.platform||'';
+    var win=q?q==='windows':/win/i.test(p);
+    var mac={label:'Download for Mac',href:'https://github.com/iamsatz/breathe-site/releases/latest/download/Breathe.dmg',
+      fine:'Free · macOS 13 or later · 1.7 MB · Nothing leaves your Mac',
+      req:'macOS 13 or later · Apple silicon · 1.7 MB',
+      howto:'Open the DMG, drag Breathe to Applications, click the face in your menu bar.',
+      sub:'for your Mac',lead:"A tiny menu bar face shows how stressed your Mac's memory is. Open it and Breathe tells you which app to pause, with one safe click.",h2:'Give your Mac some room',
+      other:'Also for Windows (early build)',otherHref:'https://github.com/iamsatz/breathe-site/releases/latest/download/Breathe-Windows.zip'};
+    var w={label:'Download for Windows',href:mac.otherHref,
+      fine:'Free · Windows 10 or 11 · early build · Nothing leaves your PC',
+      req:'Windows 10 or 11 · needs the free .NET 8 runtime (Windows offers it) · unsigned: click More info, then Run anyway',
+      howto:'Unzip, run Breathe.exe, find the face in your tray. The Windows version is new: it shows the four faces and the heavy apps, with Quit only (no Pause, no browser tabs yet).',
+      sub:'for your PC',lead:"A tiny tray face shows how stressed your PC's memory is. Open it and Breathe tells you which app is heavy, and quits it politely with one click.",h2:'Give your PC some room',
+      other:'Also for Mac',otherHref:mac.href};
+    var o=win?w:mac;
+    document.querySelectorAll('[data-os-sub]').forEach(function(e){e.textContent=o.sub});
+    document.querySelectorAll('[data-os-lead]').forEach(function(e){e.textContent=o.lead});
+    document.querySelectorAll('[data-os-h2]').forEach(function(e){e.textContent=o.h2});
+    document.querySelectorAll('[data-os-text]').forEach(function(e){e.textContent=o.label});
+    document.querySelectorAll('[data-os-fine]').forEach(function(e){e.textContent=o.fine});
+    document.querySelectorAll('[data-os-req]').forEach(function(e){e.textContent=o.req});
+    document.querySelectorAll('[data-os-howto]').forEach(function(e){e.textContent=o.howto});
+    document.querySelectorAll('[data-os-main]').forEach(function(e){e.href=o.href;e.firstChild.textContent=o.label+' '});
+    document.querySelectorAll('[data-os-other]').forEach(function(e){e.textContent=o.other;e.href=o.otherHref});
+  })();
+</script>
 </body>
 </html>
